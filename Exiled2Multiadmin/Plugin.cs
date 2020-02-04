@@ -47,7 +47,7 @@ namespace Exiled2Multiadmin
         }
         public override void OnReload()
         {
-            Plugin.Info("[OnReload] Reloaded.");
+            //Not used
         }
     }
 
@@ -83,6 +83,7 @@ namespace Exiled2Multiadmin
         public static void Prefix()
         {
             ServerConsole.AddLog($"Player connect: ");
+            if(PlayerManager.players.Count >= CustomNetworkManager.slots) ServerConsole.AddLog($"Server full");
         }
     }
 
